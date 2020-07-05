@@ -31,6 +31,7 @@
   <script>
     'use strict';
     {
+      let count = 0;
       const board = document.getElementById('board');
       for(let m = 0; m < 3 ; m++){
         const tr = document.createElement('tr');
@@ -38,11 +39,25 @@
           const td = document.createElement('td');
           // td.textContent = '●';
           td.id = `a-${m}-${n}`;
+          td.onclick = clicked;
           tr.appendChild(td);
         }
 
         board.appendChild(tr);
       }
+      
+      
+
+      function clicked(e) {
+        console.log(e);
+        console.log(count);
+            if (count++ % 2 == 0) {
+                e.target.textContent = "〇";
+            } else {
+                e.target.textContent = "×";
+            }
+      }
+      
 
     }
   </script>
