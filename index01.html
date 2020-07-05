@@ -23,9 +23,28 @@
 </head>
 <body>
   <table id="board" border="1">
+    <!-- <tr><td>a</td><td>a</td><td>a</td></tr>
     <tr><td>a</td><td>a</td><td>a</td></tr>
-    <tr><td>a</td><td>a</td><td>a</td></tr>
-    <tr><td>a</td><td>a</td><td>a</td></tr>
+    <tr><td>a</td><td>a</td><td>a</td></tr> -->
   </table>
+
+  <script>
+    'use strict';
+    {
+      const board = document.getElementById('board');
+      for(let m = 0; m < 3 ; m++){
+        const tr = document.createElement('tr');
+        for(let n = 0; n < 3; n++){
+          const td = document.createElement('td');
+          td.textContent = '●';
+          td.id = `a-${m}-${n}`;
+          tr.appendChild(td);
+        }
+        
+        board.appendChild(tr);
+      }
+
+    }
+  </script>
 </body>
 </html>
