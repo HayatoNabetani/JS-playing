@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    table{
+      border-collapse: collapse;
+    }
+    tr{
+      height:150px;
+    }
+    td{
+      width:150px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <table id="board" border="1">
+    <!-- <tr><td>a</td><td>a</td><td>a</td></tr>
+    <tr><td>a</td><td>a</td><td>a</td></tr>
+    <tr><td>a</td><td>a</td><td>a</td></tr> -->
+  </table>
+
+  <script>
+    'use strict';
+    {
+      let count = 0;
+      const board = document.getElementById('board');
+      for(let m = 0; m < 3 ; m++){
+        const tr = document.createElement('tr');
+        for(let n = 0; n < 3; n++){
+          const td = document.createElement('td');
+          // td.textContent = '●';
+          td.id = `a-${m}-${n}`;
+          td.onclick = clicked;
+          tr.appendChild(td);
+        }
+
+        board.appendChild(tr);
+      }
+      
+      
+
+      function clicked(e) {
+        console.log(e);
+        console.log(count);
+            if (count++ % 2 == 0) {
+                e.target.textContent = "〇";
+            } else {
+                e.target.textContent = "×";
+            }
+      }
+      
+
+    }
+  </script>
+</body>
+</html>
