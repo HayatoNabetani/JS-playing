@@ -32,13 +32,15 @@
       clickeditem.addEventListener('click',()=>{
         console.log(clickeditem);
         // clickeditemはクリックされた要素
-        clickeditem.textContent = 'hello world';
 
         lists.forEach(item =>{
           item.textContent = 'goodby world';
           console.log(item);
         });
         // itemはlists内のすべての要素
+
+        clickeditem.textContent = 'hello world';
+        // 順番を変えることでクリックされた要素だけ変化させることができた
 
 
       })
