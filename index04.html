@@ -29,8 +29,17 @@
     const lists = document.querySelectorAll('li');
 
     lists.forEach(item => {
-      console.log(item);
+      item.addEventListener('click',()=>{
+        console.log(item);
+        // ここで{item}というのはクリックされた要素で、自動的に取得されていることに気づく
+        item.textContent = 'oppai';
+      })
     })
+
+    // jQueryと比較すると
+    // $('li').on('click',()=>{
+    //   text = $(this).text();
+    // })こんなのだったはず
     
   </script>
 </body>
