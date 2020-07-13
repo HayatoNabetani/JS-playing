@@ -24,9 +24,9 @@
 </head>
 <body>
   <div id="app">
-    <button>こちらをクリック</button>
+    <button @click="show = !show">こちらをクリック</button>
 
-    <p>ここの色が変わります。</p>
+    <p v-if="show">ここの色が変わります。</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -34,6 +34,10 @@
   <script>
     let app = new Vue({
       el:"#app",
+
+      data:{
+        show : true,
+      }
     })
   </script>
 </body>
