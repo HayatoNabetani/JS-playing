@@ -18,6 +18,7 @@
       margin-left: 2rem;
       border: 1px solid #ccc;
       border-radius: 10px;
+      cursor: pointer;
     }
     .active{
       background-color: aqua;
@@ -31,9 +32,9 @@
 <body>
   <div id="app">
     <ul>
-      <li>タブ１</li>
-      <li class="active">タブ２</li>
-      <li class="active">タブ３</li>
+      <li @click="show =!show" :class="{active:show}">タブ１</li>
+      <li @click="show =!show" :class="{active:!show}">タブ２</li>
+      <li @click="show =!show" :class="{active:!show}">タブ３</li>
     </ul>
 
     <div class="content">
