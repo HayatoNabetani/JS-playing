@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+      display: flex;
+    }
+    ul li{
+      margin-left: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .active{
+      background-color: aqua;
+      color:white;
+    }
+    .active-2{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li>タブ１</li>
+      <li class="active">タブ２</li>
+      <li class="active">タブ３</li>
+    </ul>
+
+    <div class="content">
+      <p>abc</p>
+      <p class="active-2">def</p>
+      <p class="active-2">ghi</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    let app = new Vue({
+      el:"#app",
+
+      data:{
+        show : false,
+      }
+    })
+  </script>
+</body>
+</html>
