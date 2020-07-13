@@ -19,6 +19,12 @@
       width:50%;
       border: 1px solid #ccc;
       padding: 2rem;
+      transition: all 2s;
+    }
+    /* しっかりとtransition効くね */
+    .active{
+      background-color: aqua;
+      color:white;
     }
   </style>
 </head>
@@ -26,7 +32,7 @@
   <div id="app">
     <button @click="show = !show">こちらをクリック</button>
 
-    <p v-if="show">ここの色が変わります。</p>
+    <p :class="{active:show}">ここの色が変わります。</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -36,7 +42,7 @@
       el:"#app",
 
       data:{
-        show : true,
+        show : false,
       }
     })
   </script>
