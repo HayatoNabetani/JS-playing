@@ -24,23 +24,23 @@
       background-color: aqua;
       color:white;
     }
-    .active-2{
+    /* .active-2{
       display: none;
-    }
+    } */
   </style>
 </head>
 <body>
   <div id="app">
     <ul>
-      <li @click="show =!show" :class="{active:show}">タブ１</li>
-      <li @click="show =!show" :class="{active:!show}">タブ２</li>
-      <li @click="show =!show" :class="{active:!show}">タブ３</li>
+      <li @click="show=1" :class="[ show === 1 ? 'active' : '' ]">タブ１</li>
+      <li @click="show=2" :class="[ show === 2 ? 'active' : '' ]">タブ２</li>
+      <li @click="show=3" :class="[ show === 3 ? 'active' : '' ]">タブ３</li>
     </ul>
 
     <div class="content">
-      <p>abc</p>
-      <p class="active-2">def</p>
-      <p class="active-2">ghi</p>
+      <p v-show="show===1">abc</p>
+      <p v-show="show===2">def</p>
+      <p v-show="show===3">ghi</p>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
       el:"#app",
 
       data:{
-        show : false,
+        show : 1,
       }
     })
   </script>
