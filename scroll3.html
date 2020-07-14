@@ -21,7 +21,7 @@
         opacity: 0;
       }
       .v-enter-active {
-        transition: opacity 4s
+        transition: opacity 10s;
       }
       .v-enter-to{
         opacity: 1;
@@ -32,7 +32,7 @@
     <div class="container">
       <p>あいうえお</p>
     </div>
-    <div id="app" v-show="scY > 300">
+    <div id="app" @scroll="scY > 300">
       <transition appear>
       <p>あいうえおかきくけこさしすせそたちつてとあいうえおかきくけこさしすせそたちつてとあいうえおかきくけこさしすせそたちつてとあいうえおかきくけこさしすせそたちつてと</p>
       </transition>
