@@ -38,11 +38,11 @@
         width: 200px;
         margin: 0 auto;
         margin-top: 30px;
-        transform: translateZ(0);
+        transform: translateX(-300px);
         perspective: 1000px;
         backface-visibility: hidden;
         background: rgba(255, 255, 255, 0.1);
-        transition: 0.4s all cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1);
       }
 
       #app,#app2{
@@ -93,7 +93,7 @@
             if (window.scrollY > 200) {
               el.setAttribute(
                 'style',
-                'opacity: 1; transform: translate3d(0, -10px, 0)'
+                'opacity: 1; transform: translateX(300px)'
               )
             }
             // return window.scrollY > 100
