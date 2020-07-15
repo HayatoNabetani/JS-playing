@@ -51,9 +51,7 @@
     <div class="content">
       ここにはこういうものがあるんですよ
     </div>
-  </div>
-  
-  <div id="app2">
+
     <div class="container">
       <div class="text">ここに本文が入ります</div>
       <div class="change-btn">
@@ -66,6 +64,7 @@
       ここにはこういうものがあるんですよ
     </div>
   </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
@@ -76,39 +75,13 @@
         show:false
       },
       methods: {
-        handClick:function(){
+        handClick:function(el){
           this.show=!this.show;
           var content = document.querySelector('.content');
-          content.classList.toggle('active');
-          // if (content.hasAttribute('class','active')){
-          //   return;
-          // } else {
-          //   content.classList.remove('active')
-          // }
+          content.el.classList.toggle('active');
         }
       }
     })
-
-    let app2 = new Vue({
-      el: "#app2",
-      data:{
-        show:false
-      },
-      methods: {
-        handClick:function(){
-          this.show=!this.show;
-          var content = document.querySelector('.content');
-          content.classList.toggle('active');
-          // if (content.hasAttribute('class','active')){
-          //   return;
-          // } else {
-          //   content.classList.remove('active')
-          // }
-        }
-      }
-    })
-
-    
   </script>
 </body>
 </html>
