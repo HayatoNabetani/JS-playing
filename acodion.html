@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    #app{
+    #app,#app2{
       /* height:300px; */
       background-color: #ccc;
       width:50%;
@@ -52,18 +52,32 @@
       ここにはこういうものがあるんですよ
     </div>
   </div>
+  
+  <div id="app2">
+    <div class="container">
+      <div class="text">ここに本文が入ります</div>
+      <div class="change-btn">
+        <p @click="handClick" v-show="!show">+</p>
+        <p @click="handClick" v-show="show">-</p>
+      </div>
+    </div>
+
+    <div class="content">
+      ここにはこういうものがあるんですよ
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
   <script>
     let app = new Vue({
-      el: '#app',
+      el: "#app",
       data:{
         show:false
       },
       methods: {
         handClick:function(){
-          this.show=false;
+          this.show=!this.show;
           var content = document.querySelector('.content');
           content.classList.toggle('active');
           // if (content.hasAttribute('class','active')){
@@ -74,6 +88,27 @@
         }
       }
     })
+
+    let app2 = new Vue({
+      el: "#app2",
+      data:{
+        show:false
+      },
+      methods: {
+        handClick:function(){
+          this.show=!this.show;
+          var content = document.querySelector('.content');
+          content.classList.toggle('active');
+          // if (content.hasAttribute('class','active')){
+          //   return;
+          // } else {
+          //   content.classList.remove('active')
+          // }
+        }
+      }
+    })
+
+    
   </script>
 </body>
 </html>
