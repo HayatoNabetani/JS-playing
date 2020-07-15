@@ -31,12 +31,12 @@
     <div class="container">
       <div class="text">ここに本文が入ります</div>
       <div class="change-btn">
-        <p>+</p>
-        <p>-</p>
+        <p @click="show=!show" v-show="!show">+</p>
+        <p @click="show=!show" v-show="show">-</p>
       </div>
     </div>
 
-    <div class="content">
+    <div class="content" v-show="show">
       ここにはこういうものがあるんですよ
     </div>
   </div>
@@ -47,10 +47,13 @@
     let app = new Vue({
       el: '#app',
       data:{
-        
+        show:false
       },
-      methods: {
-      }
+      // methods: {
+      //   handClick:function(){
+      //     this.show=false;
+      //   }
+      // }
     })
   </script>
 </body>
