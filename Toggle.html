@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    button{
+      display: inline-block;
+      width: 200px;
+      border-radius: 40px;
+      padding: 1em;
+      color: white;
+      background-color: brown;
+    }
+
+    p{
+      width:50%;
+      border: 1px solid #ccc;
+      padding: 2rem;
+      transition: all 2s;
+    }
+    /* しっかりとtransition効くね */
+    .active{
+      background-color: aqua;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="show = !show">こちらをクリック</button>
+
+    <p :class="{active:show}">ここの色が変わります。</p>
+    <!-- showがtrueならactiveクラスを付けるという意味 -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    let app = new Vue({
+      el:"#app",
+
+      data:{
+        show : false,
+      }
+    })
+  </script>
+</body>
+</html>
