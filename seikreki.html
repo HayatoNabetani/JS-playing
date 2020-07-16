@@ -15,29 +15,16 @@
     <div id="app" class="container">
       <div class="row">
         <div class="col-8 offset-2">
-          <h1>小銭の計算</h1>
-          <p>いくら？</p>
-          <input type="number" v-model="price"><button @click="Calc">計算する</button>
-          
+          <input type="number" name="number" v-model="nen">年は、
+          <button @click="Calc">確認</button>
         </div>
-        <div class="col-4 offset-2">
-          500円:{{yen500}}
-        </div>
-        <div class="col-4 offset-2">
-          100円:{{yen100}}
-        </div>
-        <div class="col-4 offset-2">
-          50円:{{yen50}}
-        </div>
-        <div class="col-4 offset-2">
-          10円:{{yen10}}
-        </div>
-        <div class="col-4 offset-2">
-          5円:{{yen5}}
-        </div>
-        <div class="col-4 offset-2">
-          1円:{{yen1}}
-        </div>
+        <table class="col-12">
+          <tr><th>明治</th><td>{{m}}年</td></tr>
+          <tr><th>大正</th><td>{{t}}年</td></tr>
+          <tr><th>昭和</th><td>{{s}}年</td></tr>
+          <tr><th>平成</th><td>{{h}}年</td></tr>
+          <tr><th>令和</th><td>{{r}}年</td></tr>
+        </table>
       </div>
     </div>
     
@@ -53,27 +40,18 @@
       let app = new Vue({
         el:"#app",
         data:{
-          price:0,
-          yen500:0,
-          yen100:0,
-          yen50:0,
-          yen10:0,
-          yen5:0,
-          yen1:0,
+          nen:100,
+          r:0,
+          h:0,
+          s:0,
+          t:0,
+          m:0,
         },
         methods:{
           Calc:function(){
-            change = this.price;
-            this.yen500 = Math.floor(change / 500);
-            change %=500;
-            this.yen100 = Math.floor(change / 100);
-            change %=100;
-            this.yen50 = Math.floor(change / 50);
-            change %=50;
-            this.yen10 = Math.floor(change / 10);
-            change %=10;
-            this.yen5 = Math.floor(change / 5);
-            change %=5;
+            P = this.nen;
+            this.r= P - 2018
+            ///
           }
         }
       })
