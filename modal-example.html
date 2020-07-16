@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal-enter-active,
+      .modal-leave-active {
+        transition: opacity 0.5s;
+      }
+      .modal-enter,
+      .modal-leave-to {
+        opacity: 0;
+      }
+
+      .modal{
+        background-color: #ccc;
+      }
+      .modal_inner{
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h2>モーダルウィンドウ</h2>
+      <button class="btn01" v-on:click="showModal=!showModal">
+        モーダルひらく
+      </button>
+
+      <transition name="modal">
+        <div class="modal" v-if="showModal">
+          <div class="modal_inner">
+            <p>モーダルサンプルです。</p>
+            <a class="close" href="#" v-on:click="showModal=!showModal">×</a>
+          </div>
+        </div>
+      </transition>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      let app = new Vue({
+        el: "#app",
+
+        data: {
+          showModal: false,
+        },
+      });
+    </script>
+  </body>
+</html>

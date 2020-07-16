@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .border{
+      height: 2px;
+      background-color:red;
+      margin-bottom: 2rem;
+    }
+    .v-enter-active{
+      transition: all 5s;
+    }
+    .v-enter{
+      width:0%;
+    }
+    .v-enter-to{
+      width:100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li @click="Load">
+        {{message}}
+      </li>
+    </ul>
+
+    <transition appear>
+      <div class="border"></div>
+    </transition>
+
+    <transition appear>
+      <div class="border"></div>
+    </transition>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    let app = new Vue({
+      el:"#app",
+
+      data:{
+        message: 'aiueo',
+      },
+
+      methods: {
+        Load: function(){
+          this.message = 'kakikukeko'
+
+        }
+      }
+
+    })
+  </script>
+</body>
+</html>

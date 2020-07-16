@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #app,#app2{
+      /* height:300px; */
+      background-color: #ccc;
+      width:50%;
+      margin: 16px auto;
+    }
+
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+    .container p{
+      cursor: pointer;
+    }
+
+    .content{
+      background-color: blue;
+      color:white;
+      /* display: none; */
+      height:0px;
+      opacity: 0;
+      transition: all 1s;
+    }
+    .active{
+      /* display: block; */
+      opacity: 1;
+      height:24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div class="container">
+      <div class="text">ここに本文が入ります</div>
+      <div class="change-btn">
+        <p @click="handClick" v-show="!show">+</p>
+        <p @click="handClick" v-show="show">-</p>
+      </div>
+    </div>
+
+    <div class="content">
+      ここにはこういうものがあるんですよ
+    </div>
+
+    <div class="container">
+      <div class="text">ここに本文が入ります</div>
+      <div class="change-btn">
+        <p @click="handClick" v-show="!show">+</p>
+        <p @click="handClick" v-show="show">-</p>
+      </div>
+    </div>
+
+    <div class="content">
+      ここにはこういうものがあるんですよ
+    </div>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data:{
+        show:false
+      },
+      methods: {
+        handClick:function(el){
+          this.show=!this.show;
+          var content = document.querySelector('.content');
+          content.el.classList.toggle('active');
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #app{
+      height:2000px;
+    }
+    .Page-Btn{
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 50%;
+      background: #5bc8ac;
+    }
+    .Page-Btn-Icon{
+      color: #fff;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div class="Page-Text">ここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入ります</div>
+
+    <div class="Page-Btn" @click="scrollTop">
+      <i class="fas fa-chevron-up Page-Btn-Icon"></i>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script>
+    let app = new Vue({
+      el: '#app',
+      methods: {
+        scrollTop: function(){
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            // smooth・instant・autoの3つのうちいずれかを指定しましょう。
+          });
+        }
+      }
+    })
+  </script>
+</body>
+</html>

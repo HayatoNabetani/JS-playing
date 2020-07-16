@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="start">start</div>
+  <div id="stop">stop</div>
+  <p>
+    <span id="minute">0</span>分
+    <span id="second">0</span>秒
+    <span id="millisecond">0</span>ミリ秒
+  </p>
+
+  <script>
+    'use strict';
+    {
+      const start = document.getElementById('start');
+      const stop = document.getElementById('stop');
+
+
+      let startTime;
+      let timeoutId;
+
+
+      function countUp(){
+          let runTime = Date.now() - startTime;
+          timeoutId = setTimeout(()=>{
+            countUp();
+            console.log(timeoutId);
+          },10);
+      }
+
+
+      start.addEventListener('click',()=>{
+
+        startTime = Date.now();
+
+        // setInterval(()=>{
+        //   let runTime = Date.now() - startTime;
+        //   console.log(runTime);
+        // },50);
+
+        countUp();
+
+      });
+
+      stop.addEventListener('click',()=>{
+        clearTimeout(timeoutId);
+      });
+    }
+  </script>
+</body>
+</html>

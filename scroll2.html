@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .container{
+        height:700px;
+        width:100%;
+        background-color: #ccc;
+      }
+      .container:nth-of-type(1){
+        background-color: #345;
+      }
+      .v-enter {
+        opacity: 0;
+      }
+      .v-enter-active {
+        transition: opacity 4s
+      }
+      .v-enter-to{
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>あいうえお</p>
+    </div>
+    <div id="app" v-show="scY > 300">
+      <transition appear>
+      <p>あいうえおかきくけこさしすせそたちつてとあいうえおかきくけこさしすせそたちつてとあいうえおかきくけこさしすせそたちつてとあいうえおかきくけこさしすせそたちつてと</p>
+      </transition>
+    </div>
+    <div class="container">
+      <h1>aaaaaaaaa</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data:{
+          scTimer: 0,
+          scY: 0,
+        },
+        mounted() {
+          window.addEventListener('scroll', this.handleScroll);
+        },
+        methods: {
+          handleScroll: function () {
+            if (this.scTimer) {
+              return;
+            } else {
+              this.scTimer = setTimeout(() => {
+                this.scY = window.scrollY;
+                clearTimeout(this.scTimer);
+                this.scTimer = 0;
+              }, 1000);
+            }
+          },
+
+          toTop: function () {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
