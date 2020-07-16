@@ -17,7 +17,7 @@
         <div class="col-8 offset-2">
           <h1>小銭の計算</h1>
           <p>いくら？</p>
-          <input type="number" :value=300><button @click="Calc">計算する</button>
+          <input type="number" v-model="price"><button @click="Calc">計算する</button>
           
         </div>
         <div class="col-4 offset-2">
@@ -53,6 +53,7 @@
       let app = new Vue({
         el:"#app",
         data:{
+          price:0,
           yen500:0,
           yen100:0,
           yen50:0,
@@ -61,7 +62,8 @@
         },
         methods:{
           Calc:function(){
-            
+            change = this.price;
+            console.log(change);
           }
         }
       })
