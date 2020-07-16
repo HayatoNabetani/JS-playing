@@ -58,12 +58,22 @@
           yen100:0,
           yen50:0,
           yen10:0,
+          yen5:0,
           yen1:0,
         },
         methods:{
           Calc:function(){
             change = this.price;
-            console.log(change);
+            this.yen500 = Math.floor(change / 500);
+            change %=500;
+            this.yen100 = Math.floor(change / 100);
+            change %=100;
+            this.yen50 = Math.floor(change / 50);
+            change %=50;
+            this.yen10 = Math.floor(change / 10);
+            change %=10;
+            this.yen5 = Math.floor(change / 5);
+            change %=5;
           }
         }
       })
