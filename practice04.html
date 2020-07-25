@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      display: flex;
+    }
+    ul li{
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- <ul>
+      
+    </ul> -->
+  </div>
+  <script>
+    'use strict';
+    {
+      class S {
+        constructor(height){
+          this.height = height;
+        }
+      
+        // Shape1() {
+        //   let shape = ["*", "", "**", "", "***"];
+        //   const ul = document.querySelector('ul');
+        //   for(let i = 0 ; i < shape.length; i++){
+        //     console.log(shape[i]);
+        //     const li = document.createElement('li');
+        //     li.textContent = shape[i];
+        //     ul.appendChild(li);
+        //   }
+        // }
+
+        // Shape2(){
+          // const ul = document.querySelector('ul');
+          // let shape_2 = ["*", "\t--", "**", "\t\t-", "***"];
+          // for(let i = 0 ; i < shape_2.length; i++){
+          //   console.log(shape_2[i]);
+          //   const li_2 = document.createElement('li');
+          //   li_2.textContent = shape_2[i];
+          //   ul.appendChild(li_2);
+          // }
+        // }
+
+        Judge(){
+          const container = document.querySelector('.container');
+          if(this.height === 0){
+            return;
+          } else {
+            if (this.height === 1){
+              let shape = ["*", "", "**", "", "***"];
+              
+              const ul = document.createElement('ul');
+              container.append(ul);
+              for(let i = 0 ; i < shape.length; i++){
+                console.log(shape[i]);
+                const li = document.createElement('li');
+                li.textContent = shape[i];
+                ul.appendChild(li);
+              }
+            } else {
+              for (let m = 0 ; m < this.height  ; m++){
+                const ul = document.createElement('ul');
+                container.append(ul);
+                let shape_2 = ["*", "\t--", "**", "\t\t-", "***"];
+                for(let i = 0 ; i < shape_2.length; i++){
+                  console.log(shape_2[i]);
+                  const li_2 = document.createElement('li');
+                  li_2.textContent = shape_2[i];
+                  ul.appendChild(li_2);
+                }
+              }
+
+              // let shape = ["*", "", "**", "", "***"];
+              // const ul = document.createElement('ul');
+              // container.append(ul);
+              // for(let i = 0 ; i < shape.length; i++){
+              //   console.log(shape[i]);
+              //   const li = document.createElement('li');
+              //   li.textContent = shape[i];
+              //   ul.appendChild(li);
+              // }
+            }
+          }
+          this.height = this.height - 1; 
+          Judge();
+        }
+
+      }
+
+      const out = new S(4);
+      out.Judge();
+
+    }
+  </script>
+</body>
+</html>
