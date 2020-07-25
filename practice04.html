@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      {
+        // let shape = ["*", "", "**", "", "***"];
+        // for(let i = 0 ; i < shape.length; i++){
+        //   console.log(shape[i]);
+        // }
+
+
+        // let shape_2 = ["*", " -- ", "**", "  -", "***"];
+        // for(let i = 0 ; i < shape_2.length; i++){
+        //   console.log(shape_2[i]);
+        // }
+
+        let shape = [
+          ['1','2','3','4','5','6','7','8','9'],
+          ['2','','','','','','','',''],
+          ['3','','','','','','','',''],
+          ['4','','','','','','','',''],
+          ['5','','','','','','','',''],
+          ['6','','','','','','','',''],
+          ['7','','','','','','','',''],
+          ['8','','','','','','','',''],
+          ['9','','','','','','','',''],
+          ];
+        for(let m = 1; m < 9; m++){
+          for(let n = 1; n < 9; n++){
+            shape[m][n] = m * n;
+          }
+        }
+
+        console.table(shape);
+
+      }
+    </script>
+  </body>
+</html>
