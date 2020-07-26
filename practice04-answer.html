@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    var h;
+    var w;
+    var l;
+
+    function A(n){
+      for(h=0;h<n*3;h++){
+        for(w=0,l='';w<=h||console.log(l);w++){
+          l+=h%3<w%3?'_':'*'
+        }
+      }
+    }
+    A(2);
+
+
+    // var h;
+    // var w;
+    // var l;
+
+    // function A(n){
+    //   for(h=0;h<n*3;h++){
+    //     for(w=0,l=''; w<=h  ;w++){
+    //       l+=h%3<w%3?'_':'*';
+    //     }
+    //     console.log(l);
+    //   }
+    // }
+    // A(2);
+  </script>
+</body>
+</html>
