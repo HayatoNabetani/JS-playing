@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      {
+        const first = "A";
+        const last = "Z";
+
+        const k = first.charCodeAt(0);
+        let m = '';
+        
+        for (let i = first.charCodeAt(0),l = 0; l <= (last.charCodeAt(0)-6) ; i++) {
+          l = i + ((i-k+1)*(i-k))/2;
+          m += String.fromCharCode(l);
+        }
+        console.log(m);
+      }
+    </script>
+  </body>
+</html>
