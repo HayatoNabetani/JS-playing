@@ -11,11 +11,15 @@
       {
         const first = "A";
         const last = "Z";
+        // console.log(last.charCodeAt(0));
+
+        const k = first.charCodeAt(0);
         
         let m = '';
-        for (let i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
-
-          m += String.fromCharCode(i)
+        for (let i = first.charCodeAt(0),l = 0; l <= (last.charCodeAt(0)-6) ; i++) {
+          l = i + ((i-k+1)*(i-k))/2;
+          m += String.fromCharCode(l);
+          // console.log(l);
         }
         console.log(m);
       }
